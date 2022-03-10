@@ -83,3 +83,13 @@ body{
 .SubMenu li a{
     background: coral;
 }
+.LoginForm{
+    margin: 2% 87% 2% 2%;
+}
+.LoginForm * {
+    background: blanchedalmond;
+}
+.LoginForm input{
+    background: bisque;
+  border: 1px solid black;
+}
