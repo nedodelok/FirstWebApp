@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  border : 0;
+  box-sizing: border-box;
+  background: antiquewhite;
+}
+div{
+  padding: 1%;
+  margin: 1%;
+}
+p {
+  color : indianred;
+}
+/*margin - внешний*/
+/*padding - внутренний*/
+.PageTitle{
+  background: blanchedalmond;
+  text-align: center;
+  margin: 1%;
+  border: 2px solid black;
+  padding: 1%;
+  text-transform: capitalize;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+video{
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+body{
+  font-family: Arial, serif ;
+}
+@font-face {
+	font-family: 'Font Name';
+	src: local('Font Name'),
+		url(/fonts/RussoOne-Regular.ttf);
+}
+.menu{
+    padding: 1%;
+    font-size: large;
+    position: fixed;
+    margin: 0 0 0 87%;
+    width: 100%;
+}
+.Button{
+    margin: 1%;
+    background: chocolate;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    font-size: larger;
+}
+.menu:hover .SubMenu{
+    /*display: block;*/
+
+      -webkit-transform: scaleY(1) ;
+	-ms-transform: scaleY(1);
+	transform: scaleY(1);
+}
+
+.SubMenu{
+    /*display: none;*/
+    width: 80%;
+  -webkit-transform: scaleY(0);
+	-ms-transform: scaleY(0);
+	transform: scaleY(0);
+    transition: transform 1s,-ms-transform 1s;
+    -webkit-transition: -webkit-transform 1s ;
+  -webkit-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	transform-origin: 0 0;
+    background: coral;
+}
+.SubMenu li{
+    background: coral;
+}
+
+.SubMenu li a{
+    background: coral;
+}
