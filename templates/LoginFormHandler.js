@@ -1,4 +1,5 @@
 function ValidationName() {
+
     var reg = /^([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})$/
     var myMail = form.querySelector('.Name').value;
     var valid = reg.test(myMail);
@@ -23,6 +24,7 @@ else  {
     };
 }
 
+
 let form = document.querySelector('.LoginForm')
 form.addEventListener('submit', function (event) {
     event.preventDefault()
@@ -35,5 +37,11 @@ form.addEventListener('submit', function (event) {
       console.log('name: ', name.value)
     ValidationName()
     ValidationSurname()
+    if (Age.validity.rangeUnderflow) {
+        alert("ЗХРН;ГЩДМосфрзцвк")
+    }
+    if (Age.validity.rangeOverflow) {
+        alert("ЗХРjfofdjfpgppgp")
+    }
 
 })
