@@ -91,3 +91,15 @@ body{
     background: bisque;
   border: 1px solid black;
 }
+input:invalid {
+    border: 2px solid red;
+}
+input:valid {
+    border: 2px solid green;
+}
+:required{
+    border: 2px blue;
+}
+:optional{
+    border: 2px cornflowerblue;
+}
