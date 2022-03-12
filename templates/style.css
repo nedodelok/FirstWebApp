@@ -82,24 +82,27 @@ body{
     background: coral;
 }
 .LoginForm{
-    margin: 2% 87% 2% 2%;
+    margin: 2% 82% 2% 2%;
 }
 .LoginForm * {
     background: blanchedalmond;
 }
 .LoginForm input{
     background: bisque;
-  border: 1px solid black;
+    border: 1px solid black;
 }
-input:invalid {
-    border: 2px solid red;
+.text-field__input:focus {
+    border: 2px solid blue;
 }
-input:valid {
-    border: 2px solid green;
+input:required:valid{
+  border-color: green;
 }
-:required{
-    border: 2px blue;
+input:required:invalid{
+    border-color: red;
 }
 :optional{
-    border: 2px cornflowerblue;
+    /*border: 2px cornflowerblue;*/
+}
+.alert{
+    background: red;
 }
