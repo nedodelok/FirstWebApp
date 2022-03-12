@@ -24,6 +24,15 @@ else  {
     };
 }
 
+function AroundAge() {
+    var vozrast  = form.querySelector('.Age').value;
+    if (vozrast > 120) {
+        alert("Число должно быть меньше или равно 120")
+    }
+    if (vozrast < 1) {
+        alert("Число должно быть больше или равно 1")
+    }
+}
 
 let form = document.querySelector('.LoginForm')
 form.addEventListener('submit', function (event) {
@@ -37,11 +46,5 @@ form.addEventListener('submit', function (event) {
       console.log('name: ', name.value)
     ValidationName()
     ValidationSurname()
-    if (Age.validity.rangeUnderflow) {
-        alert("ЗХРН;ГЩДМосфрзцвк")
-    }
-    if (Age.validity.rangeOverflow) {
-        alert("ЗХРjfofdjfpgppgp")
-    }
-
+    AroundAge()
 })
