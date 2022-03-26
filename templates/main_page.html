@@ -16,32 +16,33 @@
     <h1 class="PageTitle" style="color: blue;"><em><strong>Добро пожаловать на главную страницу!</strong></em></h1>
     <p>С этого "сайта" можно посмотреть смешные картинки и видео <br> Воспользуйтесь ссылками для перехода туда куда хотите:</p>
 
-<form class="LoginForm" method="post">
+{#<form class="LoginForm" action="https://api.telegram.org/bot5180045741:AAGm3ufpK79NHt4CPvhUMQpNrD7WZ9iY738/post" method="post">#}
+<form class="LoginForm"  action="/to_bot/" method="get">{%csrf_token%}
                <ul>
                    <li>
                        <p>Введите логин: </p>
-                       <input type="text" required class="Login">
+                       <input type="text" required class="Login" name="login">
                    </li>
                    <li>
                        <p>Введите пароль: </p>
-                       <input type="password"  required class="Password">
+                       <input type="password"  required class="Password" name="password">
                    </li>
                        <p>В случае регистрации: </p>
                    <li>
                        <p>Введите имя: </p>
-                       <input type="text" id="nameid" class="Name">
+                       <input type="text" id="nameid" class="Name" name="name">
                    </li>
                    <li>
                        <p>Введите фамилию: </p>
-                       <input type="text" id="surnameid" class="Surname">
+                       <input type="text" id="surnameid" class="Surname" name="surname">
                    </li>
                    <li>
                        <p>Введите возраст: </p>
-                       <input type="number" id="ageid" class="Age">
+                       <input type="number" id="ageid" class="Age" name="age">
                    </li>
                    <li>
                        <p>Введите email: </p>
-                       <input type="email" id="emailid" class="Email">
+                       <input type="email" id="emailid" class="Email" name="email">
                    </li>
                </ul>
             <p><input type="submit"></p>
@@ -50,6 +51,7 @@
     <div>
         <ul>
             <li><a href="./images_page.html">Картинки</a></li>
+            <li><a href="https://miet.ru/schedule#%D0%9F%D0%98%D0%9D-22"> ЖОПА</a></li>
             <li><a href="./video_page.html">Видео</a></li>
         </ul>
     </div>

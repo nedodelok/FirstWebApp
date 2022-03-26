@@ -20,5 +20,6 @@ from WEB_программирование import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.main_page)
+    path('', views.main_page),
+    path('to_bot/', views.to_bot)
 ]
