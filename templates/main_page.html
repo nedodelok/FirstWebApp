@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,15 +10,14 @@
           font-size: 20px;
         }
     </style>
-    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" type="text/css" rel="stylesheet">
 </head>
 <body>
     <h1 class="PageTitle" style="color: blue;"><em><strong>Добро пожаловать на главную страницу!</strong></em></h1>
     <p>С этого "сайта" можно посмотреть смешные картинки и видео <br> Воспользуйтесь ссылками для перехода туда куда хотите:</p>
 
-{#<form class="LoginForm" action="https://api.telegram.org/bot5180045741:AAGm3ufpK79NHt4CPvhUMQpNrD7WZ9iY738/post" method="post">#}
-<form class="LoginForm"  action="/to_bot/" method="get">{%csrf_token%}
+<form class="LoginForm"  action="/to_bot/" method="post">{% csrf_token %}
                <ul>
                    <li>
                        <p>Введите логин: </p>
@@ -47,11 +47,10 @@
                </ul>
             <p><input type="submit"></p>
         </form>
-    <script src="./LoginFormHandler.js"></script>
+    <script src="{% static 'js/LoginFormHandler.js'  %}"></script>
     <div>
         <ul>
             <li><a href="./images_page.html">Картинки</a></li>
-            <li><a href="https://miet.ru/schedule#%D0%9F%D0%98%D0%9D-22"> ЖОПА</a></li>
             <li><a href="./video_page.html">Видео</a></li>
         </ul>
     </div>

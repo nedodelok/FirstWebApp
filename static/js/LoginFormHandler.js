@@ -45,20 +45,43 @@ function AroundAge() {
 
 let form = document.querySelector('.LoginForm')
 form.addEventListener('submit', function (event) {
-    event.preventDefault()
-  var alerts = form.querySelectorAll('.alert')
 
+    console.log("bbeeeeeeeebbbrrraaaaaaa")
+        console.log(event.cancelable())
+    // event.preventDefault()
+  var alerts = form.querySelectorAll('.alert')
   for (var i = 0; i < alerts.length; i++) {
     alerts[i].remove()
   }
-    ValidationName()
-    ValidationSurname()
-    AroundAge()
-  let email = form.querySelector('.Email')
-    if (!email.value){
-    let div = document.createElement('div');
-    div.className = "alert";
-    div.innerHTML = "Заполните поле";
-    emailid.after(div)
+
+  var sendForm = false
+    if ((form.querySelector(".Name").value === "")
+        && (form.querySelector(".SurName").value === "")
+        && (form.querySelector(".Age").value === "")
+        && (form.querySelector(".Email").value === "") ){
+        sendForm = true
     }
+    else {
+        ValidationName()
+        ValidationSurname()
+        AroundAge()
+        let email = form.querySelector('.Email')
+        if (!email.value) {
+            let div = document.createElement('div');
+            div.className = "alert";
+            div.innerHTML = "Заполните поле";
+            emailid.after(div)
+        }
+    }
+    if (form.querySelectorAll('.alert').length === 0){
+        sendForm = true
+    }
+    if (sendForm === true){
+        // event.preventDefault()
+        form.submit();
+    }
+    form.submit();
+    console.log(event.cancelable())
+    alert("testing")
+
 })
