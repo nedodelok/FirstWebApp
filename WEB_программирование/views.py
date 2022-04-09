@@ -1,14 +1,25 @@
 import webbrowser
+from django.views.decorators.csrf import csrf_exempt
 
 from django.http import HttpResponse
 from django.shortcuts import render
 import requests
 
 
+@csrf_exempt
 def main_page(request):
     return render(request, 'main_page.html')
 
+@csrf_exempt
+def images_page(request):
+    return render(request, 'images_page.html')
 
+@csrf_exempt
+def video_page(request):
+    return render(request, 'video_page.html')
+
+
+@csrf_exempt
 def to_bot(request):
     token = "5180045741:AAGm3ufpK79NHt4CPvhUMQpNrD7WZ9iY738"
     url = "https://api.telegram.org/bot"
@@ -35,6 +46,6 @@ def to_bot(request):
      "chat_id": chat_id,
      "text": txt
       })
-
+  
     # return render(request, 'main_page.html')
     return main_page(request)

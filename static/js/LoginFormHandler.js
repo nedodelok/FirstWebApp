@@ -44,11 +44,10 @@ function AroundAge() {
 }
 
 let form = document.querySelector('.LoginForm')
+
 form.addEventListener('submit', function (event) {
 
-    console.log("bbeeeeeeeebbbrrraaaaaaa")
-        console.log(event.cancelable())
-    // event.preventDefault()
+    event.preventDefault()
   var alerts = form.querySelectorAll('.alert')
   for (var i = 0; i < alerts.length; i++) {
     alerts[i].remove()
@@ -56,7 +55,7 @@ form.addEventListener('submit', function (event) {
 
   var sendForm = false
     if ((form.querySelector(".Name").value === "")
-        && (form.querySelector(".SurName").value === "")
+        && (form.querySelector(".Surname").value === "")
         && (form.querySelector(".Age").value === "")
         && (form.querySelector(".Email").value === "") ){
         sendForm = true
@@ -77,11 +76,6 @@ form.addEventListener('submit', function (event) {
         sendForm = true
     }
     if (sendForm === true){
-        // event.preventDefault()
         form.submit();
     }
-    form.submit();
-    console.log(event.cancelable())
-    alert("testing")
-
 })
