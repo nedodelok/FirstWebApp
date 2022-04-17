@@ -64,8 +64,11 @@ form.addEventListener('submit', function (event) {
         ValidationName()
         ValidationSurname()
         AroundAge()
-        let email = form.querySelector('.Email')
-        if (!email.value) {
+        let email = form.querySelector('.Email').value
+        var reg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        var valid = reg.test(email);
+        if (!valid)
+        {
             let div = document.createElement('div');
             div.className = "alert";
             div.innerHTML = "Заполните поле";
