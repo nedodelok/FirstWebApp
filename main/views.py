@@ -18,24 +18,24 @@ def main_page(request):
 #     context['form'] = CommentForm()
 #     return render(request, 'main/images_page.html', context=context)
 def images_page(request):
-
+    form = CommentForm()
     comments = Comment.objects.all()
     print(comments)
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
+        print("МЕТОД ПОСТ ПРИКИНЬ")
         # create a form instance and populate it with data from the request:
-        form = CommentForm(request.POST)
+        comment_form = CommentForm(request.POST)
         # check whether it's valid:
-        if form.is_valid():
+        if comment_form.is_valid():
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            return HttpResponseRedirect('/thanks/')
+            comment_form.save(commit=True)
+        else:
+            print("форма невалидна дебил")
 
     # if a GET (or any other method) we'll create a blank form
-    else:
-        form = CommentForm()
-
     return render(request, 'main/images_page.html', {'form': form, 'comments': comments})
 
 

@@ -4,7 +4,7 @@ from .models import Comment
 
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('content', 'pub_date')
+    list_display = ('content', 'pub_date', 'author')
 
 
 admin.site.register(Comment, CommentAdmin)

@@ -35,6 +35,7 @@
             <div class="comment">
                 <p class="info">
                     Комментарий пользователя: {{comment.author}}
+                    <br>
                     Дата Публикации : {{ comment.pub_date }}
                 </p>
                 {{ comment.content|linebreaks }}
@@ -42,10 +43,13 @@
         {% empty %}
             <p>There are no comments yet.</p>
         {% endfor %}
-            <h3 id="write_comment"><a onclick="return show_comments_form('write_comment')">Написать комментарий</a></h3>
-            <form>
-                {{ form}}
+        <div>
+            <p><h3>Напишите свой комментарий!: </h3></p>
+            <form class="CommentForm" action="/images_page.html" method="post">
+                {{ form.as_p}}
+            <p><input type="submit"></p>
             </form>
+        </div>
     </div>
 
 </body>
