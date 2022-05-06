@@ -2,11 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{% static 'main/js/ShowComment.js' %}"></script>
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
+
     <h1 class = "PageTitle"><strong>Картинки :</strong></h1>
     <div class="menu">
         <a class="Button">Меню:</a>
@@ -27,10 +30,23 @@
             <li id = "3"><img src="../../static/main/images/Не%20освобождал%20память.jpg" /></li>
             <li id = "4"><img src="../../static/main/images/пересел%20на%20плюсы_обрез.jpg" /></li>
         </ol>
+
+        {% for comment in comments %}
+            <div class="comment">
+                <p class="info">
+                    Комментарий пользователя: {{comment.author}}
+                    Дата Публикации : {{ comment.pub_date }}
+                </p>
+                {{ comment.content|linebreaks }}
+            </div>
+        {% empty %}
+            <p>There are no comments yet.</p>
+        {% endfor %}
+            <h3 id="write_comment"><a onclick="return show_comments_form('write_comment')">Написать комментарий</a></h3>
             <form>
-                {{ form.as_p }}
+                {{ form}}
             </form>
-            <script src="{% static 'main/js/Comment.js' %}"></script>
     </div>
+
 </body>
 </html>
