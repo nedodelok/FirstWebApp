@@ -35,6 +35,7 @@ def images_page(request):
             response = {"content": comment.content,
                         "pub_date": comment.pub_date,
                         "author": comment.author}
+            print(response['pub_date'])
             return JsonResponse(response, status=200)
         else:
             print("форма невалидна дебил")

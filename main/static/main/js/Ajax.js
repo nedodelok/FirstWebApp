@@ -11,12 +11,16 @@ $(document).ready(function () {
                   // если успешно, то
                   success: function (response) {
                       console.log(response)
+                      let pub_date = new Date(response['pub_date'])
                       let info = document.createElement('p')
                       info.className = "info"
-                      info.innerHTML = "Комментарий пользователя: " + response['author']
-                           + "$Дата Публикации : " + response['pub_date']
+                      info.innerHTML = "Комментарий пользователя: " + response['author'] + '<br>'
+                       + "Дата Публикации : " + pub_date.toLocaleDateString() + " " + pub_date.toLocaleTimeString()
+                       //   + "Дата Публикации : " + pub_date
                       let comment = document.createElement('div');
-                       comment.innerHTML = response['content']
+                      let p = document.createElement('p')
+                       p.innerHTML = response['content']
+                      comment.append(p)
                       comment.prepend(info)
                       comment.className = "comment";
                       commentsid.append(comment)

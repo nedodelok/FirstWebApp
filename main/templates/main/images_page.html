@@ -3,7 +3,6 @@
 <html lang="en">
 <head>
     <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
-    <script src="{% static 'main/js/Ajax.js' %}"></script>
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet">
@@ -36,12 +35,11 @@
                 <p class="info">
                     Комментарий пользователя: {{comment.author}}
                     <br>
-                    Дата Публикации : {{ comment.pub_date }}
+                    Дата Публикации : {{ comment.pub_date}}
+{#                    Дата Публикации : {{ comment.pub_date|date:"d.j.o " }} {{ comment.pub_date|time:"i:G:Y"}}#}
                 </p>
                 {{ comment.content|linebreaks }}
             </div>
-        {% empty %}
-            <p>There are no comments yet.</p>
         {% endfor %}
         </div>
         <div>

@@ -129,4 +129,8 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ALLOWED_HOSTS = ['*']
-X_FRAME_OPTIONS = '*' 
+X_FRAME_OPTIONS = '*'
+
+USE_L10N = False                 # At first, disable USE_L10N, because it overrides the format
+DATETIME_FORMAT = 'd.m.Y H:i:s'  # Set your own datetime format
+
