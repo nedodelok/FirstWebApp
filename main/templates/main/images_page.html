@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
-    <script src="{% static 'main/js/ShowComment.js' %}"></script>
+    <script src="{% static 'main/js/Ajax.js' %}"></script>
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet">
@@ -30,9 +30,9 @@
             <li id = "3"><img src="../../static/main/images/Не%20освобождал%20память.jpg" /></li>
             <li id = "4"><img src="../../static/main/images/пересел%20на%20плюсы_обрез.jpg" /></li>
         </ol>
-
+        <div id="commentsid">
         {% for comment in comments %}
-            <div class="comment">
+            <div class="comment" id="commentid">
                 <p class="info">
                     Комментарий пользователя: {{comment.author}}
                     <br>
@@ -43,14 +43,15 @@
         {% empty %}
             <p>There are no comments yet.</p>
         {% endfor %}
+        </div>
         <div>
             <p><h3>Напишите свой комментарий!: </h3></p>
-            <form class="CommentForm" action="/images_page.html" method="post">
+            <form id="CommentForm" action="/images_page.html" method="post">
                 {{ form.as_p}}
             <p><input type="submit"></p>
             </form>
         </div>
     </div>
-
+    <script src="{% static 'main/js/Ajax.js' %}"></script>
 </body>
 </html>

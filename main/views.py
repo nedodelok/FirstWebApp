@@ -1,6 +1,7 @@
 # Create your views here.
 import requests
-from django.http import HttpResponseRedirect
+from django.views.generic.edit import CreateView, FormView
+from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from .forms import CommentForm
@@ -28,10 +29,13 @@ def images_page(request):
         comment_form = CommentForm(request.POST)
         # check whether it's valid:
         if comment_form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
+            content = comment_form.cleaned_data["content"]
             comment_form.save(commit=True)
+            comment = Comment.objects.order_by('pub_date').reverse()[0]
+            response = {"content": comment.content,
+                        "pub_date": comment.pub_date,
+                        "author": comment.author}
+            return JsonResponse(response, status=200)
         else:
             print("форма невалидна дебил")
 
@@ -74,3 +78,4 @@ def to_bot(request):
 
     # return render(request, 'main_page.html')
     return main_page(request)
+
