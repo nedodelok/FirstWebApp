@@ -1,6 +1,5 @@
 
 $(document).ready(function () {
-    console.log('Бебра')
           // отслеживаем событие отправки формы
           $('#CommentForm').submit(function () {
               // создаем AJAX-вызов

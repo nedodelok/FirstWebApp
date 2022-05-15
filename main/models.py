@@ -5,16 +5,6 @@ from django.db import models
 from django.utils import timezone
 
 
-# # TODO: сделать модель постов
-# class Post(models.Model):
-#     title = models.CharField(max_length=200)
-#     content = models.TextField()
-#     pub_date = models.DateTimeField('Дата', default=timezone.now)
-#
-#     def __str__(self):
-#         return self.title
-
-
 class Comment(models.Model):
     # post_id = models.ForeignKey(Post, related_name='comments')
     # path = ArrayField(models.IntegerField)

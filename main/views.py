@@ -14,31 +14,24 @@ def main_page(request):
 
 
 @csrf_exempt
-# def images_page(request):
-#     context = {}
-#     context['form'] = CommentForm()
-#     return render(request, 'main/images_page.html', context=context)
 def images_page(request):
     form = CommentForm()
     comments = Comment.objects.all()
     print(comments)
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
-        print("МЕТОД ПОСТ ПРИКИНЬ")
         # create a form instance and populate it with data from the request:
         comment_form = CommentForm(request.POST)
         # check whether it's valid:
         if comment_form.is_valid():
-            content = comment_form.cleaned_data["content"]
             comment_form.save(commit=True)
             comment = Comment.objects.order_by('pub_date').reverse()[0]
             response = {"content": comment.content,
                         "pub_date": comment.pub_date,
                         "author": comment.author}
-            print(response['pub_date'])
             return JsonResponse(response, status=200)
         else:
-            print("форма невалидна дебил")
+            print("форма невалидна дурак")
 
     # if a GET (or any other method) we'll create a blank form
     return render(request, 'main/images_page.html', {'form': form, 'comments': comments})
