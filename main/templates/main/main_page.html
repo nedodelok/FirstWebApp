@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,58 +15,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" type="text/css" rel="stylesheet">
 </head>
 <body>
-    <h1 class="PageTitle" style="color: blue;"><em><strong>Добро пожаловать на главную страницу!</strong></em></h1>
-    <p>С этого "сайта" можно посмотреть смешные картинки и видео <br> Воспользуйтесь ссылками для перехода туда куда хотите:</p>
-
+    <h1 class="PageTitle" style="color: blue;"><em><strong>{% trans "Добро пожаловать на главную страницу!" %}</strong></em></h1>
+    <p>{%  trans "С этого сайта можно посмотреть смешные картинки и видео" %} <br>{% trans " Воспользуйтесь ссылками для перехода туда куда хотите:" %}</p>
+{#{% trans %}#}
 <form class="LoginForm"  action="/to_bot/" method="post">{% csrf_token %}
                <ul>
                    <li>
-                       <p>Введите логин: </p>
+                       <p>{% trans "Введите логин: " %}</p>
                        <input type="text" required class="Login" name="login">
                    </li>
                    <li>
-                       <p>Введите пароль: </p>
+                       <p>{% trans "Введите пароль: " %}</p>
                        <input type="password"  required class="Password" name="password">
                    </li>
-                       <p>В случае регистрации: </p>
+                       <p>{% trans "В случае регистрации: " %}</p>
                    <li>
-                       <p>Введите имя: </p>
+                       <p>{% trans "Введите имя: " %}</p>
                        <input type="text" id="nameid" class="Name" name="name">
                    </li>
                    <li>
-                       <p>Введите фамилию: </p>
+                       <p>{% trans "Введите фамилию: " %}</p>
                        <input type="text" id="surnameid" class="Surname" name="surname">
                    </li>
                    <li>
-                       <p>Введите возраст: </p>
+                       <p>{% trans "Введите возраст: " %}</p>
                        <input type="number" id="ageid" class="Age" name="age">
                    </li>
                    <li>
-                       <p>Введите email: </p>
+                       <p>{% trans "Введите email: " %}</p>
                        <input type="text" id="emailid" class="Email" name="email">
                    </li>
                </ul>
-            <p><input type="submit"></p>
+            <p><input type="submit" value="{% trans "Отправить" %}"></p>
         </form>
     <script src="{% static 'main/js/LoginFormHandler.js' %}"></script>
     <div>
         <ul>
-            <li><a href="images_page.html">Картинки</a></li>
-            <li><a href="video_page.html">Видео</a></li>
+            <li><a href="images_page.html">{% trans "Картинки" %}</a></li>
+            <li><a href="video_page.html">{% trans "Видео" %}</a></li>
         </ul>
     </div>
     <div>
         <pre style="font-family:'Pacifico', cursive;">
-            <span style="color: red" >Из груши выползал червячок</span>
+            <span style="color: red" >{% trans "Из груши выползал червячок" %}</span>{% blocktrans %}
             А из подушки — сновиденье
             На кухне хохотал дурачок
             Смешав колбаску со слюною
             Запуталась культя в рукаве
             Весна забылась в рукопашной
             На цыпочках подкравшись к себе
-            Я позвонил и убежал.
+            Я позвонил и убежал.{% endblocktrans %}
         </pre>
-        <pre style="font-family: 'Russo One', sans-serif;">
+        <pre style="font-family: 'Russo One', sans-serif;">{% blocktrans %}
             Из груши выползал червячок
             А из кармана — безобразие
             На лавочке молчал старичок
@@ -73,8 +74,25 @@
             Местами возникали толчки
             А в целом было превосходно
             По-прежнему ползли червячки
-            Лишь холмик на кладбище просел.
+            Лишь холмик на кладбище просел.{% endblocktrans %}
         </pre>
     </div>
+
+<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+{#<form action="" method="post">{% csrf_token %}#}
+    <input name="next" type="hidden" value="{{ redirect_to }}">
+    <select name="language">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                {{ language.name_local }} ({{ language.code }})
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Go">
+</form>
+
 </body>
 </html>

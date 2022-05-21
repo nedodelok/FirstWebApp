@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-21 10:05+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\forms.py:14
+#, fuzzy
+#| msgid "Комментарий пользователя: "
+msgid "Ваш комментарий"
+msgstr "Your comment"
+
+#: .\models.py:13
+#, fuzzy
+#| msgid "Комментарий пользователя: "
+msgid "Комментарий"
+msgstr "Comment"
+
+#: .\models.py:14
+msgid "Дата"
+msgstr "Date"
+
+#: .\models.py:15
+msgid "Автор"
+msgstr "Author"
+
+#: .\templates\main\images_page.html:13
+msgid "Картинки :"
+msgstr "Pictures "
+
+#: .\templates\main\images_page.html:15
+msgid "Меню:"
+msgstr "Menu"
+
+#: .\templates\main\images_page.html:18
+msgid "Картинка 1"
+msgstr "Picture 1"
+
+#: .\templates\main\images_page.html:19
+msgid "Картинка 2"
+msgstr "Picture 2"
+
+#: .\templates\main\images_page.html:20
+msgid "Картинка 3"
+msgstr "Picture 3"
+
+#: .\templates\main\images_page.html:21
+msgid "Картинка 4"
+msgstr "Picture 4"
+
+#: .\templates\main\images_page.html:37
+msgid "Комментарий пользователя: "
+msgstr "by "
+
+#: .\templates\main\images_page.html:39
+msgid "Дата Публикации : "
+msgstr "Publication date : "
+
+#: .\templates\main\images_page.html:46
+msgid "Напишите свой комментарий!: "
+msgstr "Enter your comment"
+
+#: .\templates\main\images_page.html:49 .\templates\main\main_page.html:49
+msgid "Отправить"
+msgstr "Submit"
+
+#: .\templates\main\main_page.html:18
+msgid "Добро пожаловать на главную страницу!"
+msgstr "Welcome to the main page!"
+
+#: .\templates\main\main_page.html:19
+msgid "С этого сайта можно посмотреть смешные картинки и видео"
+msgstr "From this site you can watch funny pictures and videos"
+
+#: .\templates\main\main_page.html:19
+msgid " Воспользуйтесь ссылками для перехода туда куда хотите:"
+msgstr "Use the links to go where you want:"
+
+#: .\templates\main\main_page.html:24
+msgid "Введите логин: "
+msgstr "Enter your login"
+
+#: .\templates\main\main_page.html:28
+msgid "Введите пароль: "
+msgstr "Enter your password"
+
+#: .\templates\main\main_page.html:31
+msgid "В случае регистрации: "
+msgstr "In case of registration"
+
+#: .\templates\main\main_page.html:33
+msgid "Введите имя: "
+msgstr "Enter your name"
+
+#: .\templates\main\main_page.html:37
+msgid "Введите фамилию: "
+msgstr "Enter your surname"
+
+#: .\templates\main\main_page.html:41
+msgid "Введите возраст: "
+msgstr "Enter your age:"
+
+#: .\templates\main\main_page.html:45
+msgid "Введите email: "
+msgstr "Enter your email: "
+
+#: .\templates\main\main_page.html:54
+msgid "Картинки"
+msgstr "Pictures"
+
+#: .\templates\main\main_page.html:55
+msgid "Видео"
+msgstr "Video"
+
+#: .\templates\main\main_page.html:60
+msgid "Из груши выползал червячок"
+msgstr "A worm crawled out of a pear"
+
+#: .\templates\main\main_page.html:60
+msgid ""
+"\n"
+"            А из подушки — сновиденье\n"
+"            На кухне хохотал дурачок\n"
+"            Смешав колбаску со слюною\n"
+"            Запуталась культя в рукаве\n"
+"            Весна забылась в рукопашной\n"
+"            На цыпочках подкравшись к себе\n"
+"            Я позвонил и убежал."
+msgstr ""
+"\n"
+"           And from the pillow - a dream\n"
+"           The fool was laughing in the kitchen\n"
+"           Mixing sausage with saliva\n"
+"           Tangled stump in sleeve\n"
+"           Spring was forgotten in hand-to-hand combat\n"
+"           Tiptoeing towards you\n"
+"           I called and ran."
+
+#: .\templates\main\main_page.html:69
+msgid ""
+"\n"
+"            Из груши выползал червячок\n"
+"            А из кармана — безобразие\n"
+"            На лавочке молчал старичок\n"
+"            Собой являя запредельность\n"
+"            Местами возникали толчки\n"
+"            А в целом было превосходно\n"
+"            По-прежнему ползли червячки\n"
+"            Лишь холмик на кладбище просел."
+msgstr ""
+"\n"
+"           A worm crawled out of a pear\n"
+"           And from the pocket - a disgrace\n"
+"           The old man was silent on the bench\n"
+"           Self being transcendent\n"
+"           There were tremors in places\n"
+"           It was excellent overall\n"
+"           The worms were still crawling\n"
+"           The only mound in the cemetery sank."
+
+#: .\templates\main\video_page.html:12
+msgid "Видео :"
+msgstr "Video :"
+
+#~ msgid "бебра"
+#~ msgstr "bebra"

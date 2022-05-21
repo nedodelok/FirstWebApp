@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -9,15 +10,15 @@
 </head>
 <body>
 
-    <h1 class = "PageTitle"><strong>Картинки :</strong></h1>
+    <h1 class = "PageTitle"><strong>{% blocktrans %}Картинки :{% endblocktrans %}</strong></h1>
     <div class="menu">
-        <a class="Button">Меню:</a>
+        <a class="Button">{% trans "Меню:" %}</a>
         <div class="SubMenu">
             <ul>
-                <li><a href="#1">Картинка 1</a></li>
-                <li><a href="#2">Картинка 2</a></li>
-                <li><a href="#3">Картинка 3</a></li>
-                <li><a href="#4">Картинка 4</a></li>
+                <li><a href="#1">{% trans "Картинка 1" %}</a></li>
+                <li><a href="#2">{% trans "Картинка 2" %}</a></li>
+                <li><a href="#3">{% trans "Картинка 3" %}</a></li>
+                <li><a href="#4">{% trans "Картинка 4" %}</a></li>
             </ul>
         </div>
     </div>
@@ -33,19 +34,19 @@
         {% for comment in comments %}
             <div class="comment" id="commentid">
                 <p class="info">
-                    Комментарий пользователя: {{comment.author}}
+                    {% trans "Комментарий пользователя: " %}{{comment.author}}
                     <br>
-                    Дата Публикации : {{ comment.pub_date}}
+                    {% trans "Дата Публикации : " %}{{ comment.pub_date}}
                 </p>
                 {{ comment.content|linebreaks }}
             </div>
         {% endfor %}
         </div>
         <div>
-            <p><h3>Напишите свой комментарий!: </h3></p>
+            <p><h3>{% trans "Напишите свой комментарий!: " %}</h3></p>
             <form id="CommentForm" action="/images_page.html" method="post">
                 {{ form.as_p}}
-            <p><input type="submit"></p>
+            <p><input type="submit" value={% trans "Отправить" %}></p>
             </form>
         </div>
     </div>

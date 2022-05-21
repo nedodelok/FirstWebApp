@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
 </head>
 <body>
     <div>
-        <h1 class = "PageTitle"><strong >Видео :</strong></h1>
+        <h1 class = "PageTitle"><strong >{% blocktrans %}Видео :{% endblocktrans %}</strong></h1>
         <video src="../../static/main/videos/video_2021-12-16_22-24-54.mp4" width="320" height="240" controls>
         </video>
     </div>

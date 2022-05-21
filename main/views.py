@@ -1,5 +1,6 @@
 # Create your views here.
 import requests
+from django.utils import translation
 from django.views.generic.edit import CreateView, FormView
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
@@ -10,7 +11,15 @@ from .models import Comment
 
 @csrf_exempt
 def main_page(request):
-    return render(request, 'main/main_page.html')
+    if request.method == 'POST':
+
+        print(request.POST)
+        print(request.POST.get('next', request.GET.get('next')))
+    print(request.LANGUAGE_CODE)
+    print(request.session.items())
+    print(request.COOKIES)
+    context = {}
+    return render(request, 'main/main_page.html', context)
 
 
 @csrf_exempt
