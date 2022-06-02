@@ -45,7 +45,10 @@
         <div>
             <p><h3>{% trans "Напишите свой комментарий!: " %}</h3></p>
             <form id="CommentForm" action="/images_page.html" method="post">
-                {{ form.as_p}}
+{#                {{ form.as_p}}#}
+                    {{ form.content.errors }}
+                    <label for="{{ form.content.id_for_label }}">{% trans "Comment" %}:</label>
+                    {{ form.content }}
             <p><input type="submit" value={% trans "Отправить" %}></p>
             </form>
         </div>

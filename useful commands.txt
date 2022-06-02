@@ -3,6 +3,13 @@ venv/scripts/activate                      //активация виртуаль
 python  manage.py makemigrations main      // создает миграции в бд (main - любое приложение проекта)
 python  manage.py migrate                   // активация миграций
 python  manage.py  createsuperuser          // создание админа
-следующие команды выполняются из папки приложений  (в папке приложени нужно создать папку locale)
+
+// следующие команды выполняются из папки приложений  (в папке приложени нужно создать папку locale)
  django-admin  makemessages -l en -i venv    // создает файл с переводами
  django-admin  compilemessages                // компилирует эти переводы
+
+// Команды для докера
+docker build .                                // создание образа
+docker-compose build                          // создание контейнера
+docker-compose up -d                          // запуск контейнера
+docker-compose logs -f                        //логи

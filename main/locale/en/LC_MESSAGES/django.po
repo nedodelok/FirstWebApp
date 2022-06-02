@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-21 10:05+0300\n"
+"POT-Creation-Date: 2022-05-21 11:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,7 +74,13 @@ msgstr "Publication date : "
 msgid "Напишите свой комментарий!: "
 msgstr "Enter your comment"
 
-#: .\templates\main\images_page.html:49 .\templates\main\main_page.html:49
+#: .\templates\main\images_page.html:50
+#, fuzzy
+#| msgid "Комментарий пользователя: "
+msgid "Коммент"
+msgstr "Comment"
+
+#: .\templates\main\images_page.html:52 .\templates\main\main_page.html:49
 msgid "Отправить"
 msgstr "Submit"
 
@@ -176,5 +182,7 @@ msgstr ""
 msgid "Видео :"
 msgstr "Video :"
 
-#~ msgid "бебра"
-#~ msgstr "bebra"
+#, fuzzy
+#~| msgid "бебра"
+#~ msgid "Бебра"
+#~ msgstr "Bebra"
