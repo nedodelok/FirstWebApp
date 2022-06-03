@@ -4,6 +4,8 @@ python  manage.py makemigrations main      // создает миграции в
 python  manage.py migrate                   // активация миграций
 python  manage.py  createsuperuser          // создание админа
 
+pip freeze > requirements.txt               //запись всех необходимых пакетов
+
 // следующие команды выполняются из папки приложений  (в папке приложени нужно создать папку locale)
  django-admin  makemessages -l en -i venv    // создает файл с переводами
  django-admin  compilemessages                // компилирует эти переводы
@@ -12,4 +14,6 @@ python  manage.py  createsuperuser          // создание админа
 docker build .                                // создание образа
 docker-compose build                          // создание контейнера
 docker-compose up -d                          // запуск контейнера
-docker-compose logs -f                        //логи
+docker-compose logs -f                        // логи
+
+docker tag web__app qwonfery/webm:web_app      // имя приложения имя_пользователя/имя_репа:имя приложения
